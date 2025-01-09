@@ -12,5 +12,10 @@ pipeline
                 }
             }
         }
+        stage('deploy to tomcat dev1')    //5 min
+   {steps { sshagent (credentials: ['test']) 
+     {
+      sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/test3/target/jenkins-example-1.0-SNAPSHOT.jar ec2-user@172.31.18.254:/usr/share/tomcat/webapps'
+    } }}
         }
 }
