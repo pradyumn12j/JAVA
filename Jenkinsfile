@@ -25,6 +25,12 @@ pipeline
                 sh('mvn package')
             }
         }
+        stage("validate")
+        {
+            steps{
+                sh('mvn validate')
+            }
+        }
     
     }
 }
