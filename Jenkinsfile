@@ -12,6 +12,10 @@ pipeline
     sh('mvn test')
 }
   }}
+        stage("install")
+        {
+            sh('mvn install')
+        }
     
     }
 }
