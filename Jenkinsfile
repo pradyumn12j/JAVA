@@ -12,11 +12,12 @@ pipeline
     sh('mvn test')
 }
   }}
-        stage("install")
+    
+        stage("skip test")
         {
             steps{
-            sh('mvn install')
-        }
+                sh('mvn install -dSkiptests')
+            }
         }
     
     }
