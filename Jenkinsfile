@@ -19,12 +19,12 @@ pipeline
                 sh('mvn install -DSkiptests')
             }
         }
-        stage("package"
+        stage("package")
         {
             steps{
                 sh('mvn package')
             }
-        })
+        }
     
     }
 }
