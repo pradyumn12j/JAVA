@@ -34,7 +34,7 @@ pipeline
         stage('Docker image build')
         {
             steps{
-                sh('docker buildx build -t java121:latest')
+                sh('docker buildx build -t java121:latest .')
             }
         }
     
