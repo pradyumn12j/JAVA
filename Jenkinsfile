@@ -31,6 +31,12 @@ pipeline
                 sh('mvn validate')
             }
         }
+        stage('Docker image build')
+        {
+            steps{
+                sh('docker build -t java121:latest')
+            }
+        }
     
     }
 }
